@@ -1,0 +1,19 @@
+1.Question : Write program demonstrates how to use regular expressions in Python to match and search for
+patterns in text.
+
+
+Code : 
+import re
+
+text = "NLP is amazing. NLP helps machines understand language."
+match = re.search(r"NLP", text)
+
+if match:
+    print("First Match Found:", match.group())
+all_matches = re.findall(r"NLP", text)
+print("All Matches:", all_matches)
+
+
+Output : 
+First Match Found: NLP
+All Matches: ['NLP', 'NLP']

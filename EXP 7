@@ -1,0 +1,19 @@
+Question 7:Write program using the NLTK library to perform part-of-speech tagging on a text.
+
+
+Code :
+import nltk
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+
+text = "NLP makes computers understand human language"
+tokens = nltk.word_tokenize(text)
+
+tags = nltk.pos_tag(tokens)
+print(tags)
+
+
+
+Output : 
+[('NLP', 'NNP'), ('makes', 'VBZ'), ('computers', 'NNS'),
+ ('understand', 'VB'), ('human', 'JJ'), ('language', 'NN')]

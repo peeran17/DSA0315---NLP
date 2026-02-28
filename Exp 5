@@ -1,0 +1,19 @@
+Question 5: Use the Porter Stemmer algorithm to perform word stemming on a list of words using python
+libraries.
+
+
+COde :from nltk.stem import PorterStemmer
+
+ps = PorterStemmer()
+
+words = ["playing", "played", "happiness", "studies"]
+
+for word in words:
+    print(word, "->", ps.stem(word))
+
+
+Output : 
+playing -> play
+played -> play
+happiness -> happi
+studies -> studi

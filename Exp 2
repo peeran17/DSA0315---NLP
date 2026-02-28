@@ -1,0 +1,32 @@
+Question : 2. Implement a basic finite state automaton that recognizes a specific language or pattern. In this
+example, we&#39;ll create a simple automaton to match strings ending with &#39;ab&#39; using python.
+
+Code :
+
+def fsa_ends_with_ab(string):
+    state = 0
+
+    for char in string:
+        if state == 0:
+            if char == 'a':
+                state = 1
+        elif state == 1:
+            if char == 'b':
+                state = 2
+            elif char == 'a':
+                state = 1
+            else:
+                state = 0
+        elif state == 2:
+            if char == 'a':
+                state = 1
+            else:
+                state = 0
+
+    return state == 2
+
+
+Output : Accepted
+
+test = "aaab"
+print("Accepted" if fsa_ends_with_ab(test) else "Rejected")

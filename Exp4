@@ -1,0 +1,22 @@
+Question : 4. Implement a finite-state machine for morphological parsing. In this example, we&#39;ll create a
+simple machine to generate plural forms of English nouns using python.
+
+Code :
+def pluralize(noun):
+    if noun.endswith(('s', 'x', 'z')):
+        return noun + "es"
+    elif noun.endswith('y'):
+        return noun[:-1] + "ies"
+    else:
+        return noun + "s"
+
+words = ["cat", "bus", "baby"]
+
+for w in words:
+    print(w, "->", pluralize(w))
+
+
+Output :
+cat -> cats
+bus -> buses
+baby -> babies

@@ -1,0 +1,31 @@
+Question 3:  Write program demonstrates how to perform morphological analysis using the NLTK library in
+Python.
+
+Code :
+import nltk
+import nltk
+nltk.download('punkt_tab')
+from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import word_tokenize
+
+
+nltk.download('punkt')
+nltk.download('wordnet')
+
+text = "The boys are playing and ate apples"
+
+tokens = word_tokenize(text)
+
+lemmatizer = WordNetLemmatizer()
+
+for word in tokens:
+    print(word, "->", lemmatizer.lemmatize(word))
+
+Output : 
+The -> The
+boys -> boy
+are -> are
+playing -> playing
+and -> and
+ate -> ate
+apples -> apple

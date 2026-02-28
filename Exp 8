@@ -1,0 +1,24 @@
+Question 8 : Implement a simple stochastic part-of-speech tagging algorithm using a basic probabilistic
+model to assign POS tags using python.
+
+Code :
+import random
+
+# Probabilistic dictionary
+model = {
+    "book": ["NN", "VB"],
+    "flies": ["NNS", "VBZ"],
+    "fast": ["RB"]
+}
+
+sentence = ["book", "flies", "fast"]
+
+tagged = []
+for word in sentence:
+    tag = random.choice(model.get(word, ["NN"]))
+    tagged.append((word, tag))
+
+print(tagged)
+
+output :
+[('book', 'NN'), ('flies', 'VBZ'), ('fast', 'RB')]

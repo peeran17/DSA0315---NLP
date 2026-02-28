@@ -1,0 +1,32 @@
+Question 9 :Implement a rule-based part-of-speech tagging system using regular expressions using python.
+
+
+Code :
+
+import re
+
+def rule_based_tagger(word):
+    if re.match(r'.*ing$', word):
+        return "VBG"
+    elif re.match(r'.*ed$', word):
+        return "VBD"
+    elif re.match(r'.*ly$', word):
+        return "RB"
+    elif re.match(r'.*ness$', word):
+        return "NN"
+    else:
+        return "NN"
+
+sentence = "The boy is playing happily"
+words = sentence.split()
+
+for w in words:
+    print(w, "->", rule_based_tagger(w))
+
+
+Output : 
+The -> NN
+boy -> NN
+is -> NN
+playing -> VBG
+happily -> RB

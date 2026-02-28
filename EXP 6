@@ -1,0 +1,29 @@
+Question 6 :
+
+import random
+
+text = "NLP is fun and NLP is powerful and NLP is interesting"
+words = text.split()
+
+# Build Bigram Model
+bigrams = {}
+for i in range(len(words)-1):
+    key = words[i]
+    value = words[i+1]
+    bigrams.setdefault(key, []).append(value)
+
+# Generate Text
+word = random.choice(words)
+generated = [word]
+
+for _ in range(10):
+    if word in bigrams:
+        word = random.choice(bigrams[word])
+        generated.append(word)
+    else:
+        break
+
+print("Generated Text:", " ".join(generated))
+
+
+Output : Generated Text: fun and NLP is fun and NLP is powerful and NLP

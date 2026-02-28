@@ -1,0 +1,16 @@
+Question 10 :Implement transformation-based tagging using a set of transformation rules, apply a simple rule
+to tag words using python.
+
+Code :
+sentence = ["can", "you", "can", "a", "can"]
+
+tags = ["NN"] * len(sentence)
+
+for i in range(1, len(sentence)):
+    if sentence[i] == "can" and sentence[i-1] == "you":
+        tags[i] = "VB"
+
+print(list(zip(sentence, tags)))
+
+Code :
+[('can', 'NN'), ('you', 'NN'), ('can', 'VB'), ('a', 'NN'), ('can', 'NN')]
